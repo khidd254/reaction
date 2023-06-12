@@ -1,15 +1,26 @@
 <template>
  <h1>This is a reaction timer</h1>
+ <button @click="start">play</button>
 </template>
-
 <script>
-
 export default {
   name: 'App',
-  components: {}
+  components: {},
+  data(){
+    return{
+      isPlaying: false,
+      delay: none
+    }
+  },
+  methods: {
+    start() {
+      this.delay = 2000 + Math.random() *5000
+      this.isPlaying = true
+      console.log(this.delay)
+    }
+  }
 }
 </script>
-
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
